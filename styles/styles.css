@@ -20,3 +20,14 @@ body, html {
   display: table;
   clear: both;
   }
+
+.structurecolumn {
+    float: left;
+    width: 20%;
+    padding: 3%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
