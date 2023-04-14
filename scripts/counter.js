@@ -1,15 +1,33 @@
-let counter = 0;
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("button").onclick = count;
-});
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/Users/kohjinzhen/Downloads/Year 2 Sem 2/NM2207/draftStoryBoard/resources/bigidea.jpeg");
+  min-height: 75%;
+}
 
-function count() {
-  counter++;
+.datacolumn {
+  float: left;
+  width: 25%;
+}
 
-  if (counter % 10 === 0) {
-    alert("Mouse would like to thank you for the food 🧀🐭");
-  }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-  document.querySelector(".counter").innerHTML = counter;
+.structurecolumn {
+    float: left;
+    width: 20%;
+    padding: 3%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
