@@ -9,6 +9,11 @@
   <link defer href="css/appstyle.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <script defer src="appscripts/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> <!--load chart.js into DOM-->
+  <script src='https://cdn.plot.ly/plotly-2.18.2.min.js'></script> <!--load plotly into DOM-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script> <!--load d3 into DOM-->
+
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
@@ -32,10 +37,10 @@
   </div>
 </section>
 
-  <section class="section">
+  <section class="section" style="height: 60%">
     <div class="content-container">
       <div class="column-left">
-        <p class="text">Suicide is more common than you think and has become the leading cause of death among youths today. It is linked to mental disorders, particularly depression and alcohol use disorders, and the strongest risk factor for suicide is a previous suicide attempt.</p>
+        <p class="text">Suicide is more common than you think and has become the leading cause of death among youths today. It is linked to financial woes, mental disorders, particularly depression and alcohol use disorders, and the strongest risk factor for suicide is a previous suicide attempt.</p>
       </div>
       <div class="column-right">
         <img src="./images/image1.png" alt="Some things related to suicide" width="100%" />
@@ -43,16 +48,110 @@
     </div>
   </section>
 
-
-  <section class="section x">
-  <div class="content-container">
-    <div class="column-left">
-      <p class="text">lorem ipsum</p>
+  <section class="section x" style="padding:10px">
+    <div class="content-container">
+      <div class="column-left">
+        <p class="text">
+          From the map here, we can observe how suicide rates vary widely between countries.
+          For some countries in Southern Africa and Eastern Europe, the estimated rates of suicide are high, with over 15 annual deaths per 100,000 people. 
+          Meanwhile for other countries in Europe, South America and Asia, the estimated rates of suicide are lower, with under 10 annual deaths per 100,000 people.
+          The wide range in suicide rates around the world is likely the result of many factors.</p>
+      </div>
+      <div id='suicide_rate'></div>
     </div>
-     <div class="column-right">
+  </section>
 
+  <section class="section" style="height: 60%">
+    <div class="content-container">
+      <div class="column-left">
+        <img src="./images/socialstigma.jpeg" alt="Social Stigmas make people not talk about suicide." width="100%" />
+      </div>
+      <div class="column-right">
+        <p class="text">
+          Despite these numbers being substaintial enough on their own, it is disheartening that most of these numbers remain to be <strong>under-reported</strong>.
+          Many of the reasons for under-reporting include social stigma and cultural or legal concerns. Suicide is still seen to be a taboo topic in many societies even today.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="content-container">
+      <div id='suicide_mental'></div><!-- suicide vs prevalence -->
+    </div>
+  </section>
+
+  <section class="section two">
+    <div style="max-width:700px">
+      <p class="text">
+        There are many risk factors for suicide, including bullying, financial distress, and trauma.
+        A large risk factor is mental illness, especially if it is not treated. On average, people who are diagnosed with a mental illness tend to have a higher risk of suicide.
+        <br>
+        Mental illnesses are a major risk factor for suicide, as further seen from the graph above showing suicide rates per 100,000 people versus the prevalence of depressive disorders, 
+        measured as the number suffering per 100,000 people. 
+        <br>
+        For example, for Lesotho, it would mean that there approximately 42.17 deaths per 100,000 individuals and 5,511.6 number suffering from depression per 100,000 individuals.
+        <br> 
+        With the graph showing a somewhat positive relationship between number of depression cases and suicide rates, it further proves how mental illnesses - such as depression - 
+        play a part in the globally high suicide rates.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="thoughts">
+    <div class="content center" style="max-width:700px">
+      <h2 class="fake">I'm fine.</h2>
+    </div>
+  </section>
+
+  <section class="section x" style="height: 90%">
+  <div class="content-container">
+    <div id="suicide_gender" class="column-left">
+    </div>
+    <div class="column-right">
+      <p class="text">
+        We can also observe that suicides are more common among men.
+        Across countries, the estimates show that suicide rates are much higher among men than women.
+        Male gender roles tend to emphasize greater levels of strength, independence, risk-taking behavior, economic status, and individualism.
+        These stereotypes cause men to bottle up their feelings more frequently than females and be wrapped in an emotional struggle with themselves.
+      </p>
     </div>
   </div>
+  </section>
+
+  <section>
+    <div class="content-container">
+      <div id='suicide_age'></div><!-- age -->
+    </div>
+  </section>
+
+  <section class="section two">
+    <div style="max-width:700px">
+      <p class="text">By further breaking down data, we observe that suicide rates can be much higher among older people. 
+      This may sound surprising, since suicide is a leading cause of death in young people. 
+      But it is because deaths due to other causes tend to rise with age at a much faster rate than deaths by suicide.
+      The rates of death from other causes such as cardiovascular disease, cancers, dementia, and respiratory diseases, rise steeply with age throughout the lifespan.
+      However, the rates of deaths from suicides, accidents, and other ‘external causes’ tend to rise steeply from childhood until adulthood.
+      </p>
+    </div>
+  </section>
+
+  <section class="section x">
+    <div class="content-container">
+      <div class="column-left">
+        <div class="panel leftbar red-accent">
+          <p><i>But the good news is that suicide rates are declining over the years.</i></p>
+        </div>
+        <p class="text">
+          In many countries, suicide rates have declined substantially.
+          Let us observe the changes between 4 countries from year 2000. It shows drastic declines by comparing 2019 figures to the 2000 figures.
+          These large declines in suicide rates have been partly driven by greater awareness and help for people at risk, improvements in mental health treatment, and restrictions on some of the methods of suicide.
+          This tells us that suicide is preventable. But many countries do not take enough action to drive down its rates. 
+          As seen here, USA is still struggling to keep their suicide rates at bay. Suicide may not be tackled effectively, or may not even be seen as a public health concern. </p>
+      </div>
+       <div id="suicide_decline" class="column-left"> <!--death-rate-from-suicides-gho.csv-->
+      </div>
+    </div>
   </section>
 
   <!--Action-->
