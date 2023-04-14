@@ -4,11 +4,14 @@
   box-sizing: border-box;
   font-display: 'Red Hat Display', sans-serif;
   color:#fff;
-  background-color: black;
+}
+
+body {
+  background-color: #000000;
 }
 
 section {
-  height: 50vh;
+  height: 55%;
   position: sticky; /*positioned based on the user's scroll position. */
   display: flex; /*section resizes itself accordoing to the browser window*/
   justify-content: center; /*aligns the flex items at the center of the container*/
@@ -211,4 +214,30 @@ span{
   display: flex;
   grid-template-columns: 1fr 1fr;
   height: 10vh;
+}
+
+#canvas-container {
+  position: relative;
+  height: 70%;
+  width: 80%;
+}
+
+.fake {
+  color: #F0F0F0;
+  z-index: 2;
+  font-weight: bold;
+  margin-top: -0.5em;
+  position: relative;
+  text-align: center;
+  top: 50%;
+}
+
+span_e {
+  color: #752f2f;
+  font-size: 18px;
+  font-weight: bold;
+  left: 100%;
+  position: absolute;
+  white-space: nowrap;
+  z-index:1;
 }
