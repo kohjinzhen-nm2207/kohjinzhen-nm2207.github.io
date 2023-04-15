@@ -241,3 +241,8 @@ span_e {
   white-space: nowrap;
   z-index:1;
 }
+
+.hovertext text{
+  font-family: "Inconsolata", sans-serif !important;
+  font-size:15px !important;
+}
