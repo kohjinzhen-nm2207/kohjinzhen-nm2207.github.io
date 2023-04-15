@@ -470,7 +470,6 @@ d3.csv("https://2207-resources.s3.ap-southeast-1.amazonaws.com/jinzhen/suicide-r
       }
     },
     xaxis: {
-      title: "Age Group",
       font: {
         family: "Inconsolata, sans-serif",
         size: 8
